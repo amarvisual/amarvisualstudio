@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact – Amar Visual Studio | Get a Free Quote</title>
+<meta name="description" content="Contact Amar Visual Studio for professional website design. WhatsApp, email or fill our contact form to get a free quote for your business website."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.contact-inner{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start;}
+.contact-cards{display:flex;flex-direction:column;gap:14px;margin-top:36px;}
+.cc{display:flex;align-items:center;gap:16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;text-decoration:none;transition:all var(--transition);}
+.cc:hover{border-color:var(--gold-border);transform:translateX(4px);}
+.cc-icon{width:46px;height:46px;border-radius:10px;background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cc-text .l{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.cc-text .v{font-size:15px;font-weight:500;color:var(--white);}
+.contact-form-box{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:48px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:14px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--white);outline:none;transition:border-color var(--transition),box-shadow var(--transition);appearance:none;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--muted);}
+.form-group select option{background:var(--bg2);color:var(--white);}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold-border);box-shadow:0 0 0 3px rgba(201,168,76,0.08);}
+.form-group textarea{min-height:130px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.btn-submit{width:100%;padding:15px;background:var(--gold);color:#0A0A0A;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;transition:all var(--transition);}
+.btn-submit:hover{background:var(--gold-light);box-shadow:0 8px 32px rgba(201,168,76,0.25);transform:translateY(-1px);}
+.form-success{display:none;margin-top:16px;padding:16px 20px;background:rgba(0,100,50,0.15);border:1px solid rgba(0,200,80,0.2);border-radius:8px;font-size:14px;color:#6EE7A0;text-align:center;}
+.form-error{display:none;margin-top:16px;padding:16px 20px;background:rgba(180,0,0,0.15);border:1px solid rgba(255,80,80,0.2);border-radius:8px;font-size:14px;color:#FCA5A5;text-align:center;}
+@media(max-width:900px){.contact-inner{grid-template-columns:1fr;gap:48px;}}
+@media(max-width:640px){.form-row{grid-template-columns:1fr;}.contact-form-box{padding:28px 20px;}}
+</style>
+</head>
+<body>
+<nav id="navbar"><div class="container"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Amar Visual Studio"/><div class="nav-logo-text"><span class="n1">Amar Visual Studio</span><span class="n2">Website Design</span></div></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="active">Contact</a></li></ul>
+  <div class="nav-right"><a href="contact.html" class="btn btn-gold" style="padding:11px 24px;font-size:12px">Get a Website</a><button class="hamburger" id="hamburger"><span></span><span></span><span></span></button></div>
+</div><div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html" class="btn btn-gold">Get a Website</a></div></div></nav>
+
+<section class="page-hero"><div class="container">
+  <div class="eyebrow" style="justify-content:center"><span class="gold-line"></span>Get in Touch</div>
+  <h1 class="display-title">Let's Build Something <em>Great</em></h1>
+  <p class="body-text" style="margin-top:16px">Fill in the form below, WhatsApp us, or drop an email — we'll get back to you within 24 hours.</p>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="container"><div class="contact-inner">
+  <div class="reveal">
+    <div class="eyebrow"><span class="gold-line"></span>Contact Info</div>
+    <h2 class="display-title" style="font-size:clamp(28px,3.5vw,44px)">Reach Out <em>Directly</em></h2>
+    <p class="body-text" style="margin-top:16px">We respond quickly — usually within a few hours. WhatsApp is the fastest way to reach us.</p>
+    <div class="contact-cards">
+      <a href="https://wa.me/916372885071" target="_blank" class="cc">
+        <div class="cc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gold)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+        <div class="cc-text"><div class="l">WhatsApp (Fastest)</div><div class="v">+91 6372885071</div></div>
+        <svg style="margin-left:auto;color:var(--muted)" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="mailto:amarvisualstudio@gmail.com" class="cc">
+        <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="cc-text"><div class="l">Email</div><div class="v">amarvisualstudio@gmail.com</div></div>
+        <svg style="margin-left:auto;color:var(--muted)" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://instagram.com/amarvisualstudio" target="_blank" class="cc">
+        <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+        <div class="cc-text"><div class="l">Instagram</div><div class="v">@amarvisualstudio</div></div>
+        <svg style="margin-left:auto;color:var(--muted)" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="cc" style="cursor:default">
+        <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="cc-text"><div class="l">Response Time</div><div class="v">Within 24 Hours</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-box reveal reveal-d1">
+    <form id="contact-form" action="https://formspree.io/f/mzdyrlrj" method="POST">
+      <div class="form-row">
+        <div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div>
+        <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="you@example.com" required/></div>
+      </div>
+      <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX"/></div>
+      <div class="form-group"><label>Service Needed</label>
+        <select name="service"><option value="">Select a service...</option><option>Custom Website Design</option><option>Business Website</option><option>Landing Page Design</option><option>Website Redesign</option><option>Other / Not Sure</option></select>
+      </div>
+      <div class="form-group"><label>Budget Range</label>
+        <select name="budget"><option value="">Select budget range...</option><option>Under ₹5,000</option><option>₹5,000 – ₹10,000</option><option>₹10,000 – ₹20,000</option><option>₹20,000+</option><option>Not sure yet</option></select>
+      </div>
+      <div class="form-group"><label>Your Message</label><textarea name="message" placeholder="Tell me about your project — business type, goals, timeline, any specific requirements..." required></textarea></div>
+      <button type="submit" class="btn-submit" id="submit-btn">Send Message →</button>
+      <div class="form-success" id="form-success">✅ Message sent! I'll reply within 24 hours.</div>
+      <div class="form-error" id="form-error">❌ Something went wrong. Please WhatsApp me directly.</div>
+    </form>
+  </div>
+</div></div></section>
+
+<footer><div class="container">
+  <div class="footer-gold-line"></div>
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="flogo"><img src="logo.png" alt="Logo"/><div class="flogo-text"><div class="n1">Amar Visual Studio</div><div class="n2">Website Design Services</div></div></a><p>Professional website design for growing businesses across India.</p><div class="footer-social"><a href="https://instagram.com/amarvisualstudio" target="_blank" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a href="https://wa.me/916372885071" target="_blank" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(245,240,232,0.5)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a><a href="mailto:amarvisualstudio@gmail.com" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a></div></div>
+    <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html">Custom Website Design</a></li><li><a href="services.html">Business Website</a></li><li><a href="services.html">Landing Page</a></li><li><a href="services.html">Website Redesign</a></li></ul></div>
+    <div class="footer-col"><h5>Studio</h5><ul><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul><li><a href="https://wa.me/916372885071">+91 6372885071</a></li><li><a href="mailto:amarvisualstudio@gmail.com">amarvisualstudio@gmail.com</a></li><li><a href="https://instagram.com/amarvisualstudio" target="_blank">@amarvisualstudio</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Amar Visual Studio. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a></div></div>
+</div></footer>
+<script>
+const nb=document.getElementById('navbar');window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>30));
+const hb=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu');hb.addEventListener('click',()=>mm.classList.toggle('open'));
+const revs=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target)}}),{threshold:0.1});
+revs.forEach(el=>ro.observe(el));
+const cf=document.getElementById('contact-form'),sb=document.getElementById('submit-btn'),fs=document.getElementById('form-success'),fe=document.getElementById('form-error');
+cf.addEventListener('submit',async function(e){
+  e.preventDefault();sb.textContent='Sending...';sb.disabled=true;fs.style.display='none';fe.style.display='none';
+  try{
+    const r=await fetch('https://formspree.io/f/mzdyrlrj',{method:'POST',body:new FormData(cf),headers:{'Accept':'application/json'}});
+    if(r.ok){fs.style.display='block';cf.reset();setTimeout(()=>fs.style.display='none',6000);}
+    else fe.style.display='block';
+  }catch(err){fe.style.display='block';}
+  sb.textContent='Send Message →';sb.disabled=false;
+});
+</script>
+</body></html>

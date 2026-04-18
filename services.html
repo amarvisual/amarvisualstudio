@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Services – Amar Visual Studio | Website Design India</title>
+<meta name="description" content="Professional website design services — custom websites, business websites, landing pages, and website redesign for small businesses and startups in India."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.services-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:64px;}
+.service-row{background:var(--bg2);padding:52px 48px;display:grid;grid-template-columns:80px 1fr 1fr;gap:40px;align-items:start;transition:background var(--transition);position:relative;overflow:hidden;}
+.service-row::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-dim),transparent);opacity:0;transition:opacity var(--transition);}
+.service-row:hover{background:var(--bg3);}
+.service-row:hover::after{opacity:1;}
+.sr-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--gold-border);line-height:1;position:relative;z-index:1;transition:color var(--transition);}
+.service-row:hover .sr-num{color:var(--gold);}
+.sr-left{position:relative;z-index:1;}
+.sr-left h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--white);margin-bottom:12px;}
+.sr-left .sr-tag{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.sr-left p{font-size:15px;color:var(--white-dim);line-height:1.7;font-weight:300;}
+.sr-right{position:relative;z-index:1;}
+.sr-includes h4{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.sr-includes ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.sr-includes ul li{font-size:14px;color:var(--white-dim);display:flex;align-items:center;gap:10px;font-weight:300;}
+.sr-includes ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.sr-btn{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-top:28px;transition:gap var(--transition);}
+.sr-btn:hover{gap:14px;}
+.pricing-section{background:var(--bg2);border-top:1px solid var(--border);}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;}
+.price-card{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:40px 32px;position:relative;transition:all var(--transition);}
+.price-card.featured{border-color:var(--gold-border);background:linear-gradient(135deg,#1A1000,#111);}
+.price-card.featured::before{content:'Most Popular';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#0A0A0A;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:4px 16px;border-radius:99px;}
+.price-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4);}
+.pc-name{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.pc-price{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--white);line-height:1;margin-bottom:4px;}
+.pc-price span{font-size:18px;}
+.pc-desc{font-size:13px;color:var(--muted);margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+.pc-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.pc-features li{font-size:14px;color:var(--white-dim);display:flex;align-items:center;gap:10px;font-weight:300;}
+.pc-features li::before{content:'';width:16px;height:16px;min-width:16px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);background-image:url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3L3.5 5.5L9 1' stroke='%23C9A84C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;}
+.faq-section{}
+.faq-list{max-width:760px;margin:56px auto 0;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-item{background:var(--bg2);}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:24px 28px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;color:var(--white);transition:color var(--transition);}
+.faq-q:hover{color:var(--gold-light);}
+.faq-icon{width:24px;height:24px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform var(--transition);}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 28px 24px;font-size:15px;color:var(--muted);line-height:1.7;font-weight:300;}
+.faq-item.open .faq-a{display:block;}
+@media(max-width:900px){.service-row{grid-template-columns:60px 1fr;}.sr-right{grid-column:2;}.pricing-grid{grid-template-columns:1fr;}}
+@media(max-width:640px){.service-row{grid-template-columns:1fr;padding:36px 24px;}.sr-num{font-size:36px;}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Amar Visual Studio"/>
+        <div class="nav-logo-text"><span class="n1">Amar Visual Studio</span><span class="n2">Website Design</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn btn-gold" style="padding:11px 24px;font-size:12px">Get a Website</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-gold">Get a Website</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center"><span class="gold-line"></span>What We Offer</div>
+    <h1 class="display-title">Our <em>Services</em></h1>
+    <p class="body-text" style="margin-top:16px">Everything your business needs to succeed online — from custom design to full website creation.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="services-list">
+      <div class="service-row reveal">
+        <div class="sr-num">01</div>
+        <div class="sr-left">
+          <div class="sr-tag">Most Popular</div>
+          <h2>Custom Website Design</h2>
+          <p>Unique, brand-aligned websites designed from scratch. We study your business, your audience, and your goals — then create a website that truly represents your brand and drives results.</p>
+          <a href="contact.html" class="sr-btn">Get Started <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="sr-right">
+          <div class="sr-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Custom design — no templates</li>
+              <li>Up to 5 pages</li>
+              <li>Mobile responsive design</li>
+              <li>Contact form integration</li>
+              <li>SEO basic setup</li>
+              <li>3 rounds of revisions</li>
+              <li>1 month free support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="service-row reveal">
+        <div class="sr-num">02</div>
+        <div class="sr-left">
+          <div class="sr-tag">Best for Businesses</div>
+          <h2>Business Website</h2>
+          <p>A complete professional website that builds trust, showcases your services, and generates leads. Perfect for small businesses, shops, clinics, restaurants, and service providers.</p>
+          <a href="contact.html" class="sr-btn">Get Started <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="sr-right">
+          <div class="sr-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Home, About, Services, Contact pages</li>
+              <li>Google Maps integration</li>
+              <li>WhatsApp chat button</li>
+              <li>Social media links</li>
+              <li>Google Analytics setup</li>
+              <li>Fast loading speed</li>
+              <li>Hosting guidance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="service-row reveal">
+        <div class="sr-num">03</div>
+        <div class="sr-left">
+          <div class="sr-tag">High Conversion</div>
+          <h2>Landing Page Design</h2>
+          <p>A powerful single-page website designed to convert visitors into leads or customers. Perfect for product launches, offers, events, or digital marketing campaigns.</p>
+          <a href="contact.html" class="sr-btn">Get Started <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="sr-right">
+          <div class="sr-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Single page, high-converting design</li>
+              <li>Lead capture form</li>
+              <li>Testimonials section</li>
+              <li>Countdown timer (if needed)</li>
+              <li>Fast delivery — 2–3 days</li>
+              <li>A/B testing ready</li>
+              <li>Mobile optimized</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="service-row reveal">
+        <div class="sr-num">04</div>
+        <div class="sr-left">
+          <div class="sr-tag">Upgrade Your Site</div>
+          <h2>Website Redesign</h2>
+          <p>Transform your old, outdated website into a modern, fast, and visually stunning platform. We keep what works and improve everything else — without losing your brand identity.</p>
+          <a href="contact.html" class="sr-btn">Get Started <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="sr-right">
+          <div class="sr-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Full visual redesign</li>
+              <li>Content migration</li>
+              <li>Speed optimization</li>
+              <li>Mobile responsiveness fix</li>
+              <li>Modern UI/UX improvements</li>
+              <li>SEO preservation</li>
+              <li>2 weeks post-launch support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pricing-section">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="eyebrow" style="justify-content:center"><span class="gold-line"></span>Transparent Pricing</div>
+      <h2 class="display-title">Simple & <em>Affordable Plans</em></h2>
+      <p class="body-text" style="max-width:500px;margin:16px auto 0">No hidden fees. No surprises. Just straightforward pricing for professional website design.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="pc-name">Starter</div>
+        <div class="pc-price"><span>₹</span>4,999</div>
+        <div class="pc-desc">Perfect for personal brands and freelancers</div>
+        <ul class="pc-features">
+          <li>1–3 Page Website</li>
+          <li>Mobile Responsive</li>
+          <li>Contact Form</li>
+          <li>Basic SEO Setup</li>
+          <li>2 Revisions</li>
+          <li>Delivered in 3 Days</li>
+        </ul>
+        <a href="contact.html" class="btn btn-ghost" style="width:100%;justify-content:center">Get Started</a>
+      </div>
+      <div class="price-card featured reveal reveal-d1">
+        <div class="pc-name">Business</div>
+        <div class="pc-price"><span>₹</span>9,999</div>
+        <div class="pc-desc">Best for small businesses and startups</div>
+        <ul class="pc-features">
+          <li>Up to 5 Pages</li>
+          <li>Custom Design</li>
+          <li>WhatsApp Button</li>
+          <li>Google Maps</li>
+          <li>Analytics Setup</li>
+          <li>3 Revisions</li>
+          <li>1 Month Support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center">Get Started</a>
+      </div>
+      <div class="price-card reveal reveal-d2">
+        <div class="pc-name">Premium</div>
+        <div class="pc-price"><span>₹</span>19,999</div>
+        <div class="pc-desc">For businesses wanting a powerful online presence</div>
+        <ul class="pc-features">
+          <li>Unlimited Pages</li>
+          <li>Premium Custom Design</li>
+          <li>Blog Setup</li>
+          <li>Advanced SEO</li>
+          <li>Speed Optimization</li>
+          <li>Unlimited Revisions</li>
+          <li>3 Months Support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-ghost" style="width:100%;justify-content:center">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-section">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="eyebrow" style="justify-content:center"><span class="gold-line"></span>FAQ</div>
+      <h2 class="display-title">Common <em>Questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">How long does it take to build a website? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-a">Most websites are completed within 3–7 business days depending on the package and complexity. Landing pages can be done in 2–3 days. We'll give you a clear timeline before starting.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need to provide content and images? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-a">You can provide your own content and images, or we can help with placeholder content and source free stock images for your website. We'll guide you through what's needed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will my website work on mobile phones? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-a">Absolutely! Every website we build is fully mobile responsive. It will look great and function perfectly on smartphones, tablets, and all screen sizes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens after my website is delivered? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-a">We provide free support after delivery depending on your plan (1–3 months). We'll help you publish the site, set up your domain, and fix any issues that come up.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I update the website myself later? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-a">Yes! We build your website with clean, well-structured code. We'll provide basic guidance on how to make simple updates yourself, or we're always available for paid updates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-gold-line"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="flogo"><img src="logo.png" alt="Logo"/><div class="flogo-text"><div class="n1">Amar Visual Studio</div><div class="n2">Website Design Services</div></div></a>
+        <p>Professional website design for growing businesses. Modern, fast, conversion-focused.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/amarvisualstudio" target="_blank" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://wa.me/916372885071" target="_blank" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(245,240,232,0.5)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a href="mailto:amarvisualstudio@gmail.com" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html">Custom Website Design</a></li><li><a href="services.html">Business Website</a></li><li><a href="services.html">Landing Page</a></li><li><a href="services.html">Website Redesign</a></li></ul></div>
+      <div class="footer-col"><h5>Studio</h5><ul><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="https://wa.me/916372885071" target="_blank">+91 6372885071</a></li><li><a href="mailto:amarvisualstudio@gmail.com">amarvisualstudio@gmail.com</a></li><li><a href="https://instagram.com/amarvisualstudio" target="_blank">@amarvisualstudio</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Amar Visual Studio. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a></div></div>
+  </div>
+</footer>
+<script>
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>30));
+const hb=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu');
+hb.addEventListener('click',()=>mm.classList.toggle('open'));
+const revs=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target)}}),{threshold:0.12});
+revs.forEach(el=>ro.observe(el));
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

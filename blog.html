@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog – Amar Visual Studio | Web Design Tips & Insights</title>
+<meta name="description" content="Web design tips, insights, and guides for small businesses in India. Learn how to grow your business online with a professional website."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
+.blog-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all var(--transition);text-decoration:none;display:block;}
+.blog-card:hover{border-color:var(--gold-border);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.4);}
+.blog-img{height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.bi1{background:linear-gradient(135deg,#0D1B3E,#1A3A6B,#2550A0);}
+.bi2{background:linear-gradient(135deg,#1A0800,#3D1200,#6B2200);}
+.bi3{background:linear-gradient(135deg,#0A1F0A,#1A3A1A,#0F5C2E);}
+.bi4{background:linear-gradient(135deg,#1A001A,#3A0050,#6B0080);}
+.bi5{background:linear-gradient(135deg,#001A1A,#003A3A,#006B6B);}
+.bi6{background:linear-gradient(135deg,#1A1A00,#3A3A00,#6B6B00);}
+.blog-img-icon{font-size:48px;opacity:0.6;}
+.blog-info{padding:24px;}
+.blog-meta{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.blog-cat{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
+.blog-date{font-size:11px;color:var(--muted);}
+.blog-card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--white);margin-bottom:10px;line-height:1.3;}
+.blog-card p{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;margin-bottom:18px;}
+.blog-read{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:6px;transition:gap var(--transition);}
+.blog-card:hover .blog-read{gap:10px;}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.blog-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Amar Visual Studio"/>
+        <div class="nav-logo-text"><span class="n1">Amar Visual Studio</span><span class="n2">Website Design</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn btn-gold" style="padding:11px 24px;font-size:12px">Get a Website</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-gold">Get a Website</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center"><span class="gold-line"></span>Insights & Tips</div>
+    <h1 class="display-title">Our <em>Blog</em></h1>
+    <p class="body-text" style="margin-top:16px">Web design tips, business growth insights, and digital advice for entrepreneurs and small businesses in India.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="blog-grid">
+      <a href="blog-post-1.html" class="blog-card reveal">
+        <div class="blog-img bi1"><div class="blog-img-icon">🌐</div></div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="blog-cat">Web Design</span><span class="blog-date">Jan 2025</span></div>
+          <h3>Why Every Small Business Needs a Website in 2025</h3>
+          <p>Discover why having a professional website is no longer optional for small businesses in India — and how it can transform your revenue.</p>
+          <div class="blog-read">Read Article <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+      <a href="blog-post-2.html" class="blog-card reveal reveal-d1">
+        <div class="blog-img bi2"><div class="blog-img-icon">💰</div></div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="blog-cat">Pricing</span><span class="blog-date">Feb 2025</span></div>
+          <h3>How Much Does a Website Cost in India in 2025?</h3>
+          <p>A complete breakdown of website design costs in India — from freelancers to agencies — and how to choose the right option for your budget.</p>
+          <div class="blog-read">Read Article <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+      <a href="blog-post-3.html" class="blog-card reveal reveal-d2">
+        <div class="blog-img bi3"><div class="blog-img-icon">📱</div></div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="blog-cat">Tips</span><span class="blog-date">Mar 2025</span></div>
+          <h3>5 Signs Your Business Website Needs a Redesign</h3>
+          <p>Is your website hurting your business instead of helping it? Here are 5 clear signs it's time for a professional website redesign.</p>
+          <div class="blog-read">Read Article <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+      <a href="blog-post-4.html" class="blog-card reveal">
+        <div class="blog-img bi4"><div class="blog-img-icon">🔍</div></div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="blog-cat">SEO</span><span class="blog-date">Mar 2025</span></div>
+          <h3>Beginner's Guide to SEO for Small Business Websites</h3>
+          <p>Learn the basics of SEO that every small business owner in India should know to get found on Google and attract more customers online.</p>
+          <div class="blog-read">Read Article <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+      <a href="blog-post-5.html" class="blog-card reveal reveal-d1">
+        <div class="blog-img bi5"><div class="blog-img-icon">⚡</div></div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="blog-cat">Performance</span><span class="blog-date">Apr 2025</span></div>
+          <h3>Why Website Speed Matters for Your Business in India</h3>
+          <p>Slow websites lose customers. Learn how website loading speed directly impacts your sales, SEO rankings, and customer trust.</p>
+          <div class="blog-read">Read Article <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+      <a href="blog-post-6.html" class="blog-card reveal reveal-d2">
+        <div class="blog-img bi6"><div class="blog-img-icon">🎨</div></div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="blog-cat">Design</span><span class="blog-date">Apr 2025</span></div>
+          <h3>How to Choose the Right Website Design for Your Business</h3>
+          <p>Not all website designs are equal. Learn how to pick the right style, colors, and layout that match your brand and attract your ideal customers.</p>
+          <div class="blog-read">Read Article <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-gold-line"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="flogo"><img src="logo.png" alt="Logo"/><div class="flogo-text"><div class="n1">Amar Visual Studio</div><div class="n2">Website Design Services</div></div></a>
+        <p>Professional website design for growing businesses. Modern, fast, conversion-focused.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/amarvisualstudio" target="_blank" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://wa.me/916372885071" target="_blank" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(245,240,232,0.5)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a href="mailto:amarvisualstudio@gmail.com" class="fsocial"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html">Custom Website Design</a></li><li><a href="services.html">Business Website</a></li><li><a href="services.html">Landing Page</a></li><li><a href="services.html">Website Redesign</a></li></ul></div>
+      <div class="footer-col"><h5>Studio</h5><ul><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="https://wa.me/916372885071">+91 6372885071</a></li><li><a href="mailto:amarvisualstudio@gmail.com">amarvisualstudio@gmail.com</a></li><li><a href="https://instagram.com/amarvisualstudio" target="_blank">@amarvisualstudio</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Amar Visual Studio. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a></div></div>
+  </div>
+</footer>
+<script>
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>30));
+const hb=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu');
+hb.addEventListener('click',()=>mm.classList.toggle('open'));
+const revs=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target)}}),{threshold:0.1});
+revs.forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
