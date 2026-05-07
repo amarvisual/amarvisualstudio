@@ -1,0 +1,475 @@
+/* ============================================================
+   AMAR VISUAL STUDIO — TYPOGRAPHY SYSTEM
+   Font: Poppins (Google Fonts)
+   Style: Premium SaaS / Agency — Webflow / Stripe inspired
+   Weights used: 400, 500, 600, 700 only
+============================================================ */
+
+/* ── GOOGLE FONT IMPORT ── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ── ROOT VARIABLES ── */
+:root {
+  --font: 'Poppins', sans-serif;
+
+  /* Font sizes */
+  --fs-h1: 42px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-h4: 20px;
+  --fs-card: 19px;
+  --fs-body: 15px;
+  --fs-small: 13px;
+  --fs-nav: 13px;
+  --fs-btn: 14px;
+  --fs-label: 11px;
+  --fs-eyebrow: 11px;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Line heights */
+  --lh-heading: 1.2;
+  --lh-subheading: 1.3;
+  --lh-body: 1.65;
+
+  /* Spacing */
+  --sec-pad: 96px;
+  --sec-pad-sm: 52px;
+  --gap-xs: 8px;
+  --gap-sm: 16px;
+  --gap-md: 24px;
+  --gap-lg: 40px;
+  --gap-xl: 64px;
+}
+
+/* ── GLOBAL RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── H1 — HERO / PAGE TITLES ── */
+h1,
+.h1 {
+  font-family: var(--font);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  letter-spacing: 0.5px;
+}
+
+/* ── H2 — SECTION HEADINGS ── */
+h2,
+.h2 {
+  font-family: var(--font);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  letter-spacing: 0.3px;
+}
+
+/* ── H3 — SUB-SECTION HEADINGS ── */
+h3,
+.h3 {
+  font-family: var(--font);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-subheading);
+  letter-spacing: 0.2px;
+}
+
+/* ── H4 — CARD TITLES / SMALL HEADINGS ── */
+h4,
+.h4 {
+  font-family: var(--font);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-subheading);
+  letter-spacing: 0.2px;
+}
+
+/* ── H5, H6 — UTILITY HEADINGS ── */
+h5, h6 {
+  font-family: var(--font);
+  font-size: var(--fs-card);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-subheading);
+  letter-spacing: 0.2px;
+}
+
+/* ── BODY / PARAGRAPHS ── */
+p {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+}
+
+/* ── SERVICE CARD TITLES ── */
+.card-title,
+.svc-card h3,
+.port-info h3,
+.why-card h4,
+.value-card h3 {
+  font-family: var(--font);
+  font-size: var(--fs-card);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-subheading);
+  letter-spacing: 0.2px;
+}
+
+/* ── NAVIGATION ── */
+.nav-links a,
+.mob a {
+  font-family: var(--font);
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.5px;
+}
+
+/* ── LOGO TEXT ── */
+.logo-name,
+.nav-logo-text .n1,
+.flogo .fn1 {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── BUTTONS ── */
+.btn,
+button,
+input[type="submit"] {
+  font-family: var(--font);
+  font-size: var(--fs-btn);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.5px;
+}
+
+.btn-sub {
+  font-family: var(--font);
+  font-size: var(--fs-btn);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.5px;
+}
+
+/* ── EYEBROW LABELS ── */
+.eyebrow {
+  font-family: var(--font);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ── FORM LABELS ── */
+.fg label,
+.form-group label {
+  font-family: var(--font);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── FORM INPUTS ── */
+.fg input,
+.fg textarea,
+.fg select,
+.form-group input,
+.form-group textarea,
+.form-group select {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+}
+
+/* ── FOOTER ── */
+.f-col h5 {
+  font-family: var(--font);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.f-col ul li a,
+.footer-col ul li a {
+  font-family: var(--font);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+}
+
+.f-bot p,
+.footer-bottom p {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+}
+
+/* ── SECTION SPACING ── */
+.sec,
+.section {
+  padding: var(--sec-pad) 0;
+}
+
+/* ── HERO SECTION ── */
+.hero-title,
+.hero h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  letter-spacing: 0.5px;
+}
+
+.hero-sub,
+.hero-subtitle {
+  font-size: 16px;
+  font-weight: var(--fw-regular);
+  line-height: 1.7;
+}
+
+/* ── STATS / NUMBERS ── */
+.hs-num,
+.hstat .num,
+.ab-num,
+.ab-st .n {
+  font-family: var(--font);
+  font-size: 38px;
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hs-lbl,
+.hstat .lbl,
+.ab-lbl,
+.ab-st .l {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── SECTION NUMBER (01, 02...) ── */
+.svc-num,
+.sr-num {
+  font-family: var(--font);
+  font-size: 36px;
+  font-weight: var(--fw-bold);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+/* ── LINK TEXT ── */
+.svc-link,
+.port-link,
+.p-link,
+.btn-view {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── PORTFOLIO TAGS ── */
+.ptag,
+.port-tag,
+.p-tag,
+.portfolio-tag {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ── PRICING ── */
+.pc-price,
+.price {
+  font-family: var(--font);
+  font-size: 44px;
+  font-weight: var(--fw-bold);
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+
+.pc-name {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.pc-desc {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: var(--fw-regular);
+  line-height: 1.55;
+}
+
+.pc-list li {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+}
+
+/* ── ABOUT QUOTE ── */
+.about-quote,
+.ab-quote {
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: var(--fw-regular);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ── BLOG / POST ── */
+.post-body h2 { font-size: 26px; font-weight: var(--fw-bold); line-height: 1.25; letter-spacing: 0.3px; }
+.post-body h3 { font-size: 21px; font-weight: var(--fw-semibold); line-height: 1.3; }
+.post-body p  { font-size: 15px; font-weight: var(--fw-regular); line-height: 1.75; }
+.post-body blockquote p { font-size: 17px; font-style: italic; font-weight: var(--fw-regular); line-height: 1.65; }
+
+/* ── CONTACT CARD VALUES ── */
+.cc-val {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+}
+
+.cc-val.phone {
+  font-size: 20px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.03em;
+}
+
+.cc-lbl {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── FLOATING BADGE ── */
+.logo-badge,
+.fp-t {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.1em;
+}
+
+.fp-s {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: var(--fw-medium);
+}
+
+/* ── HERO TAG ── */
+.hero-tag {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── MARQUEE ── */
+.mq-item {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ── BACK LINK ── */
+.back-link {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── CTA SECTION ── */
+.cta-sec h2,
+.cta-section h2 {
+  font-size: 38px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE TYPOGRAPHY
+============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: 30px;
+    --fs-h2: 24px;
+    --fs-h3: 20px;
+    --fs-h4: 18px;
+    --fs-card: 17px;
+    --fs-body: 14px;
+    --fs-btn: 13px;
+    --sec-pad: var(--sec-pad-sm);
+  }
+
+  h1, .h1, .hero-title, .hero h1 {
+    font-size: 30px;
+    letter-spacing: 0.3px;
+  }
+
+  h2, .h2 { font-size: 24px; }
+  h3, .h3 { font-size: 20px; }
+  h4, .h4 { font-size: 18px; }
+
+  p { font-size: 14px; line-height: 1.65; }
+
+  .hero-sub { font-size: 15px; }
+
+  .hs-num, .hstat .num { font-size: 30px; }
+
+  .pc-price { font-size: 36px; }
+
+  .cta-sec h2 { font-size: 28px; }
+
+  .cc-val.phone { font-size: 17px; }
+
+  .btn { font-size: 13px; padding: 11px 22px; }
+
+  .svc-num { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --fs-h1: 27px;
+    --fs-h2: 22px;
+    --fs-h3: 18px;
+    --fs-body: 14px;
+  }
+
+  h1, .h1, .hero-title { font-size: 27px; }
+  h2, .h2 { font-size: 22px; }
+}
