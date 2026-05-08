@@ -312,8 +312,40 @@
 <script>
 const nb=document.getElementById('navbar');
 window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>30));
-const hb=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu');
-hb.addEventListener('click',()=>mm.classList.toggle('open'));
+const hb=document.getElementById('hamburger');
+const mm=document.getElementById('mobile-menu');
+if(hb && mm){
+  hb.addEventListener('click',function(e){
+    e.stopPropagation();
+    mm.classList.toggle('open');
+    const spans=hb.querySelectorAll('span');
+    if(mm.classList.contains('open')){
+      spans[0].style.transform='rotate(45deg) translate(4px,4px)';
+      spans[1].style.opacity='0';
+      spans[2].style.transform='rotate(-45deg) translate(4px,-4px)';
+    } else {
+      spans[0].style.transform='';
+      spans[1].style.opacity='';
+      spans[2].style.transform='';
+    }
+  });
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mm.classList.remove('open');
+    const spans=hb.querySelectorAll('span');
+    spans[0].style.transform='';
+    spans[1].style.opacity='';
+    spans[2].style.transform='';
+  }));
+  document.addEventListener('click',function(e){
+    if(!document.querySelector('nav').contains(e.target)){
+      mm.classList.remove('open');
+      const spans=hb.querySelectorAll('span');
+      spans[0].style.transform='';
+      spans[1].style.opacity='';
+      spans[2].style.transform='';
+    }
+  });
+}
 const revs=document.querySelectorAll('.reveal');
 const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target)}}),{threshold:0.12});
 revs.forEach(el=>ro.observe(el));

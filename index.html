@@ -184,7 +184,9 @@ section{padding:104px 0}
 nav{
   position:fixed;top:0;left:0;right:0;z-index:999;
   transition:all var(--transition);
+  /* Needed so drawer can position:absolute relative to nav */
 }
+nav > *{position:relative}
 nav.scrolled{
   background:rgba(5,5,12,0.92);
   backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
@@ -199,12 +201,15 @@ nav.scrolled{
 /* Logo */
 .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
 .nav-brand-img{
-  width:52px;height:52px;object-fit:contain;
+  width:56px;height:56px;
+  object-fit:contain;
+  object-position:center;
   border-radius:13px;
   border:2px solid var(--gold);
   box-shadow:0 0 20px rgba(201,168,76,0.25);
   background:rgba(0,0,0,0.6);
-  padding:3px;
+  padding:6px;
+  display:block;
   transition:all var(--transition);
 }
 .nav-brand:hover .nav-brand-img{
@@ -243,7 +248,9 @@ nav.scrolled{
 /* Hamburger */
 .nav-toggle{
   display:none;flex-direction:column;gap:5px;
-  background:none;border:none;cursor:pointer;padding:4px;
+  background:none;border:none;cursor:pointer;
+  padding:6px;z-index:999;
+  -webkit-tap-highlight-color:transparent;
 }
 .nav-toggle span{
   display:block;width:22px;height:1.5px;
@@ -253,19 +260,30 @@ nav.scrolled{
 /* Mobile menu */
 .nav-drawer{
   display:none;flex-direction:column;
-  background:rgba(5,5,12,0.97);
+  position:absolute;top:100%;left:0;right:0;
+  background:rgba(5,5,12,0.98);
   border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
   backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  z-index:998;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5);
 }
-.nav-drawer.open{display:flex}
+.nav-drawer.open{display:flex !important}
 .nav-drawer a{
-  font-size:13px;font-weight:500;letter-spacing:0.4px;
+  font-size:14px;font-weight:500;letter-spacing:0.4px;
   color:var(--text-secondary);text-decoration:none;
-  padding:13px 32px;border-bottom:1px solid var(--border);
+  padding:14px 24px;border-bottom:1px solid var(--border);
   transition:color var(--transition);
+  -webkit-tap-highlight-color:transparent;
 }
-.nav-drawer a:hover{color:var(--gold)}
-.nav-drawer .btn{margin:16px 32px 24px;justify-content:center}
+.nav-drawer a:hover,
+.nav-drawer a:active{color:var(--gold)}
+.nav-drawer .btn{
+  margin:16px 24px 20px;
+  justify-content:center;
+  display:flex;
+}
 
 /* ══════════════════════════════════
    HERO
@@ -909,8 +927,9 @@ footer{
 @media(max-width:768px){
   section{padding:72px 0}
   .container{padding:0 20px}
-  .nav-menu,.nav-actions .btn-secondary{display:none}
-  .nav-toggle{display:flex}
+  .nav-menu{display:none !important}
+  .nav-actions .btn-secondary{display:none !important}
+  .nav-toggle{display:flex !important}
   .hero-layout{gap:44px}
   .orbit-1{width:258px;height:258px}
   .orbit-2{width:320px;height:320px}
@@ -1401,8 +1420,40 @@ window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.
 // ── Mobile menu ──
 const toggle = document.getElementById('navToggle');
 const drawer = document.getElementById('navDrawer');
-toggle.addEventListener('click', () => drawer.classList.toggle('open'));
-drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
+if(toggle && drawer){
+  toggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    drawer.classList.toggle('open');
+    // Animate hamburger to X
+    const spans = toggle.querySelectorAll('span');
+    if(drawer.classList.contains('open')){
+      spans[0].style.transform='rotate(45deg) translate(4px,4px)';
+      spans[1].style.opacity='0';
+      spans[2].style.transform='rotate(-45deg) translate(4px,-4px)';
+    } else {
+      spans[0].style.transform='';
+      spans[1].style.opacity='';
+      spans[2].style.transform='';
+    }
+  });
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    const spans = toggle.querySelectorAll('span');
+    spans[0].style.transform='';
+    spans[1].style.opacity='';
+    spans[2].style.transform='';
+  }));
+  // Close on outside click
+  document.addEventListener('click', function(e){
+    if(!nav.contains(e.target)){
+      drawer.classList.remove('open');
+      const spans = toggle.querySelectorAll('span');
+      spans[0].style.transform='';
+      spans[1].style.opacity='';
+      spans[2].style.transform='';
+    }
+  });
+}
 
 // ── Scroll reveal ──
 const reveals = document.querySelectorAll('.reveal');
