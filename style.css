@@ -40,7 +40,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;transition:all var(--transit
 nav.scrolled{background:rgba(10,10,10,0.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px;}
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
-.nav-logo img{height:56px;width:56px;object-fit:contain;object-position:center;border-radius:13px;border:2px solid var(--gold,#C9A84C);box-shadow:0 0 18px rgba(201,168,76,0.25);background:#000;padding:6px;display:block;}
+.nav-logo img{height:56px;width:56px;object-fit:contain;object-position:center center;border-radius:13px;border:2px solid var(--gold,#C9A84C);box-shadow:0 0 18px rgba(201,168,76,0.25);background:#000;padding:6px;display:flex;align-items:center;justify-content:center;}
 .nav-logo-text .n1{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:900;color:var(--white);letter-spacing:0.12em;text-transform:uppercase;display:block;}
 .nav-logo-text .n2{font-size:9px;font-weight:600;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;font-family:'Montserrat',sans-serif;}
 .nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
